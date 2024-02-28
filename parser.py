@@ -1,10 +1,12 @@
-import requests
+import os
 import django
+import requests
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'movie.settings')
 django.setup()
 
 from credentials.settings import OMB_API_KEY
 from movies.models import Movie, Actor, Director
-
 
 
 def fetch_movies_from_omdb():
